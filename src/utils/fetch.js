@@ -6,7 +6,7 @@ export const getUsers = async () => {
   try {
     const {
       data: { results }
-    } = await axios.get("https://randomuser.me/api/?nat=fr&results=100");
+    } = await axios.get("https://randomuser.me/api/?nat=fr&results=105");
 
     return results;
   } catch (error) {
