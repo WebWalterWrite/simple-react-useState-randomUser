@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import AllUsers from "./components/AllUsers";
+import Homepage from "./components/Homepage";
 import User from "./components/User";
 
 const Header = () => (
@@ -28,7 +28,7 @@ const App = () => (
   <Layout>
     <Router>
       <Switch>
-        <Route path="/" component={AllUsers} />
+        <Route path="/" component={Homepage} />
         <Route path="/user/:" component={User} />
       </Switch>
     </Router>
