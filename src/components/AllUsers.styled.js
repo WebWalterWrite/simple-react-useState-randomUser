@@ -26,17 +26,25 @@ export const DataUser = styled.div`
 `;
 
 export const UserContainer = styled.div`
+  position: relative;
   margin: 10px;
   background-color: ${props => props.color};
   padding: 12px;
   border-radius:8px;
   transition: all .3s ease-in-out;
+  a{
+    position:absolute;
+    bottom:2%;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:center;
+    display:none;
+  }
   :hover{
     transition: all .3s ease-in-out;
     background-image: url('${props => props.img}');
     background-size:cover;
     background-position:center;
-    background-color:transparent;
     border-radius:0px;
     box-shadow: 5px 5px 15px ${props => props.color};
     img{
@@ -44,13 +52,23 @@ export const UserContainer = styled.div`
     }
     ${DataUser} div:nth-child(2n){
       position: absolute;
-      background-color:rgba(244, 244, 244, 0.3);
+      background-color:rgba(244, 244, 244, 0.8);
       top: 0%;
       left: 0%;
       right: 0%;
       margin:0px;
+      border-radius:0px;
     }
     ${DataUser} div:nth-child(3n){
         display:none;
       }
+    a{
+      display:inline-block;
+      padding:3px;
+      left:10%;
+      right:10%;
+      margin: 0 auto;
+      background-color:${props => props.color};
+    }
+  }
 `;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons/";
 // import styles
@@ -13,6 +14,7 @@ const AllUsers = ({ users }) => (
           location: { city }, // location user
           login: { username }, // nickname user
           dob: { age },
+          id: { value },
           gender // sexe user
         },
         k
@@ -34,6 +36,7 @@ const AllUsers = ({ users }) => (
                 <p>{city}</p>
               </div>
             </DataUser>
+            <Link to={`/href/${value}`}>voir son profil</Link>
           </UserContainer>
         );
       }
