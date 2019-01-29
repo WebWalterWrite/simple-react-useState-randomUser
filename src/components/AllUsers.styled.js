@@ -26,10 +26,10 @@ export const DataUser = styled.div`
 `;
 
 export const UserContainer = styled.div`
-  margin: 0.5em;
+  margin: 10px;
   background-color: ${props => props.color};
-  padding: 1em;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius:8px;
   transition: all .3s ease-in-out;
   :hover{
     transition: all .3s ease-in-out;
@@ -37,16 +37,20 @@ export const UserContainer = styled.div`
     background-size:cover;
     background-position:center;
     background-color:transparent;
+    border-radius:0px;
+    box-shadow: 5px 5px 15px ${props => props.color};
     img{
       visibility:hidden;
     }
     ${DataUser} div:nth-child(2n){
       position: absolute;
-      background-color:rgba(244, 244, 244, 0.9);
+      background-color:rgba(244, 244, 244, 0.3);
       top: 0%;
       left: 0%;
       right: 0%;
-      border-radius:8px 8px 0px 0px;
       margin:0px;
     }
+    ${DataUser} div:nth-child(3n){
+        display:none;
+      }
 `;
