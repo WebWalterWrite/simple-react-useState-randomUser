@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Homepage from "./components/Homepage";
-import User from "./components/User";
+import Users from "./components/Users";
 
 const Header = () => (
   <header>
-    <h1>React UseEffect</h1>
+    <h1>Dev2Rev</h1>
   </header>
 );
 
@@ -29,7 +29,7 @@ const App = () => (
     <Router>
       <Switch>
         <Route path="/" component={Homepage} />
-        <Route path="/user/:" component={User} />
+        <Route path="/profils/:type" component={Users} />
       </Switch>
     </Router>
   </Layout>

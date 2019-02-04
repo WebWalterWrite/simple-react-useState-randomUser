@@ -1,35 +1,73 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-// import fetch query
-import { getUsers } from "../utils/fetch";
+import elem from "styled-components";
 
-// import component
-const AllUsers = lazy(() => import("./AllUsers"));
+const Section = elem.section`
+  position:relative;
+  background-image: url('https://c.pxhere.com/photos/e7/07/jam_new_york_taxi_manhattan_chaos_big_apple-546336.jpg!d');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  height:100vh;
+  >div:first-child{
+    position:absolute;
+    background-color:#FFFFFF;
+    height: 100vh;
+    width:100vw;
+    opacity: .3;
+    z-index:0;
+  }
+`;
 
-/*
-Afficher les users 
-*/
+const Select = elem.div`
+    position:absolute;
+    width: 100vw;
+    top:30%;
+    z-index:999;
+    text-align:center;
+    h2{
+      font-size:48px;
+      margin-bottom:20px;
+      color: #FFFFFF;
+      text-shadow: 4px 3px #737373;
+    }
+    p{
+      width:20%;
+      padding:8px;
+      font-weight:bold;
+      font-size:22px;
+      border-radius:20px;
+      margin: 0 auto;
+      cursor:pointer;
+      a{
+        color:#FFFFFF;
+        text-decoration:none;
+      }
+      :nth-child(2n){
+        background-color: #329af0;
+        margin-bottom:10px;
+      }
+      :nth-child(3n){
+        background-color: pink;
+      }
+    }
+
+`;
+
 export default () => {
-  // Créer le state users.
-  const [users, setUsers] = useState([]);
-  const [user, setUser] = useState([]);
-
-  // Récupérer les données lors du montage du component.
-  useEffect(
-    () => {
-      (async () => {
-        setUsers(await getUsers());
-      })();
-    },
-    [user]
-  );
   return (
-    <section>
-      <h1>All Users</h1>
-
-      <Suspense fallback={<h1>Chargement des profils en cours...</h1>}>
-        <AllUsers users={users} />
-      </Suspense>
-    </section>
+    <Section>
+      <div />
+      <Select>
+        <h2>Je recherche</h2>
+        <p>
+          <Link to="profils/:homme">Un Homme</Link>
+        </p>
+        <p>
+          <Link to="profils/:femme">Une Femme</Link>
+        </p>
+      </Select>
+    </Section>
   );
 };

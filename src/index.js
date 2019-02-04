@@ -12,6 +12,15 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
   box-sizing: border-box;
   }
+
+  header{
+    background-color: #FFFFFF;
+    padding:30px;
+    color: gray;
+    h1{
+      font-size:58px;
+    }
+  }
 `;
 
 const rootElement = document.getElementById("root");
