@@ -7,7 +7,7 @@ import { UsersContainer, UserContainer, DataUser } from "./AllUsers.styled";
 
 const AllUsers = ({ users }) => (
   <UsersContainer>
-    {users.map(
+    {users.slice(0,20).map(
       (
         {
           picture: { large }, // user photo
